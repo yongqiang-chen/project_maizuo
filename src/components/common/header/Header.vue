@@ -51,7 +51,9 @@
         left: 0;
         width: auto;
         height: .5rem;
+        line-height:.5rem;
         overflow: hidden;
+
         .left {
             color: #fff;
             font-size:16px;
@@ -62,6 +64,7 @@
             height:50px;
             margin: 0 auto;
             float: left;
+
             .title-icon{
                 float: left;
                 width:48px;
@@ -84,7 +87,6 @@
         .right{
             float:right;
             color:#999;
-            line-height: 50px;
             .city{
                 float:left;
                 font-size:14px;

@@ -35,7 +35,7 @@
             console.log(this.banners);
             new Swiper(".swiper-container", {
                 loop:true,
-                autoplay:true
+                autoplay:false
             });
         }
     }
@@ -48,7 +48,8 @@
 	    overflow: hidden;
 	    margin: 0;
 	    padding: 0;
-	    width: 320px;
+        width: 320px;
+        margin: 0 auto;
 
 	    img {
 	    	width: 100%;
