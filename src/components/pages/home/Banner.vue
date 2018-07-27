@@ -23,8 +23,12 @@
         },
         methods:{
             getBanner(){
-                axios.get("/static/mock/banner.json").then(res=>{
-                    this.banners = res.data;
+                axios.get("http://localhost:8080/mz/v4/api/billboard/home",{
+                    params:{
+                        __t:Date.now()
+                    }
+                }).then(res=>{
+                    this.banners = res.data.data.billboards;
                 })
             }
         },
@@ -35,7 +39,7 @@
             console.log(this.banners);
             new Swiper(".swiper-container", {
                 loop:true,
-                autoplay:false
+                autoplay:true
             });
         }
     }
@@ -46,7 +50,6 @@
         position: relative;
 	    display: block;
 	    overflow: hidden;
-	    margin: 0;
 	    padding: 0;
         width: 320px;
         margin: 0 auto;

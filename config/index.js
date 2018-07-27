@@ -10,11 +10,19 @@ module.exports = {
         // Paths
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
-        proxyTable: {},
+        proxyTable: {
+            "/mz": { //暗号
+                target: "https://m.maizuo.com", //实际应该代理访问到的目标
+                changeOrigin: true, //跨域
+                pathRewrite: { //路径中将"/mz"替换成""
+                    "^/mz": ""
+                }
+            }
+        },
 
         // Various Dev Server settings
         host: 'localhost', // can be overwritten by process.env.HOST
-        port: 8023, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+        port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
         autoOpenBrowser: true,
         errorOverlay: true,
         notifyOnErrors: true,

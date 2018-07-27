@@ -27,6 +27,7 @@
 <script>
     import NavList from "./NavList.vue";
     import "animate.css";
+    import router from "../../../router/index.js"
     
     export default {
         name: "Header",

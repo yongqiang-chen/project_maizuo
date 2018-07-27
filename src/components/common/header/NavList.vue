@@ -12,12 +12,17 @@
             enter-active-class="animated slideInLeft"
             leave-active-class="animated slideOutLeft">
             <nav class="nav-group" v-if="isNavShow">
-                <ul>
-                    <li
+                <ul @click="$emit('close')">
+                    <!-- <li
                         v-for="nav in navs"
                         :key = "nav.id">
                         {{nav.title}} <i class="fa fa-angle-right"></i>
-                    </li>
+                    </li> -->
+                    <router-link
+                        tag="li"
+                        v-for="nav in navs"
+                        :key="nav.id"
+                        :to="nav.path">{{nav.title}}<i class="fa fa-angle-right"></i></router-link>
                 </ul>
             </nav>  
         </transition>  
@@ -30,18 +35,26 @@
         props: ["isNavShow"],
         data() {
             return {
-                navs: [{
+                navs: [
+                    {
                     id: 1,
-                    title: "首页"
-                }, {
+                    title: "首页",
+                    path:"/home"
+                }, 
+                {
                     id: 2,
-                    title: "影院"
-                }, {
+                    title: "影院",
+                    path:"/cinema"
+                }, 
+                {
                     id: 3,
-                    title: "影片"
-                }, {
+                    title: "影片",
+                    path:"/films"
+                }, 
+                {
                     id: 4,
-                    title: "我的"
+                    title: "我的",
+                    path:"/mine"
                 }]
             }
         }
